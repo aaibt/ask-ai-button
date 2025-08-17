@@ -1,0 +1,35 @@
+{
+  "name": "@aaib/javascript",
+  "version": "1.0.0",
+  "dependencies": {
+    "@types/node": "^16.18.34",
+    "typescript": "^4.9.5",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "build": "npm run compile",
+    "serve": "npx serve -s ./dist -l 6740",
+    "transpile": "babel src/loader-v1.js --out-file dist/loader-v1.js --presets babel-preset-es2015",
+    "minimize": "terser dist/loader-v1.js -o dist/loader-v1.js",
+    "compile": "npm run transpile && npm run minimize"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "serve": "^14.2.4",
+    "terser": "^5.19.2"
+  }
+}
